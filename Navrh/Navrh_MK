@@ -1,0 +1,19 @@
+Functions:
+
+sum(a, b) - adding two numbers , returning sum 
+
+substr(a, b) - substracting , returning 'a - b'
+
+multiple(a, b) - a * b
+
+division(a, b) - a/b
+
+exp(x, n) - x^n
+
+root(x, n) - x^(1/n)
+
+ANOTHER FUNCITON
+
+
+All data and operations are stored in their own stacks. When UI calls a function, whether unary or binary. Programm pops operands from stack and operation from another and pushes back inside.
+
