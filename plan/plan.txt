@@ -1,0 +1,26 @@
+# Plan  
+## Tým (jenna ortega)  
+    * xvoron03  
+    * xsolom02  
+    * xklyme00  
+    * xmomot00  
+## Úlohy  
+    * xvoron03: Vedoucí tymu, GUI, prepojeni, mockups  
+    * xsolom02: Testy, profiling  
+    * xklyme00: Dokumentace, makefile, instalátory   
+    * xmomot00: Mat. knihovna, návrh  
+## Termíny  
+    1. 14.3 - Hotový plán a repozitář v GitHubu  
+    2. 27.3 - Návrh mat. knihovny a začátek prací nad TDD  
+    3. 2.4 - Testy pro matematickou knihovnu  
+    4. 9.4 - Hotová matematická knihovna a GUI  
+    5. 16.4 - Instalátory, profiling, mock-ups  
+    6. 23.4 - Dokumentace (uživatelská a developerská)  
+    7. 25.4 - Odevzdaní  
+## Komunikace  
+    Discord server: pro voice communication  
+    Telegram: pro rychlé diskuze pomocí chatu  
+## Kontrola verze  
+    Github: https://github.com/Hedgezi/jenna_calcutega  
+## Licence  
+    GNU General Public License v3.0  

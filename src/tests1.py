@@ -6,3 +6,9 @@ class SimpleMathOperationsTestCase(unittest.TestCase):
     
     def tearDown(self):
         pass
+
+    def testA(self):
+        pass
+
+if __name__ == '__main__':
+    unittest.main()
