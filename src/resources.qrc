@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>pics/backspace.png</file>
+        <file>pics/backspace_FILL1_wght400_GRAD0_opsz48.png</file>
+        <file>pics/fx.png</file>
+        <file>pics/wallpaper.jpg</file>
+    </qresource>
+</RCC>
