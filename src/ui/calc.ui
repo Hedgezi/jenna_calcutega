@@ -56,7 +56,6 @@ QPushButton:pressed {
     <string notr="true">QWidget#centralwidget {
 background-image: url(:/icons/pics/wallpaper.jpg);
 background-position: center;
-background-repeat: no-repeat;
 }</string>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
