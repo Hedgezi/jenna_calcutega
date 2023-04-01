@@ -35,6 +35,14 @@
 QPushButton {
 	background-color: transparent;
 	border: none;
+}
+
+QPushButton:hover {
+	background-color: rgba(63, 63, 63, 0.7);
+}
+
+QPushButton:pressed {
+	background-color: rgba(31, 31, 31, 0.7);
 }</string>
   </property>
   <property name="locale">
@@ -48,6 +56,7 @@ QPushButton {
     <string notr="true">QWidget#centralwidget {
 background-image: url(:/icons/pics/wallpaper.jpg);
 background-position: center;
+background-repeat: no-repeat;
 }</string>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
