@@ -2,12 +2,6 @@ import unittest
 from mathlib import evaluate
 
 class SimpleMathOperationsTestCase(unittest.TestCase):
-    def setUp(self):
-        pass
-    
-    def tearDown(self):
-        pass
-
     def testA(self):
         equation = "3+2"
         assert mathlib.evaluate(equation) == 5
@@ -51,13 +45,6 @@ class SimpleMathOperationsTestCase(unittest.TestCase):
     def testK(self):
         equation = "-10-20-30-40-50"
         assert mathlib.evaluate(equation) == -150
-
-class SimpleMathOperationsTestCase(unittest.TestCase):
-    def setUp(self):
-        pass
-    
-    def tearDown(self):
-        pass
 
 if __name__ == '__main__':
     unittest.main()
