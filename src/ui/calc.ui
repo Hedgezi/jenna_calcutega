@@ -83,7 +83,7 @@ background-color: rgba(0, 0, 0, 0.2);</string>
        <locale language="English" country="UnitedStates"/>
       </property>
       <property name="text">
-       <string>0</string>
+       <string/>
       </property>
      </widget>
     </item>
