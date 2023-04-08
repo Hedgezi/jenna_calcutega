@@ -3,7 +3,8 @@ class EqNode:
         self.left = None
         self.right = None
         self.data = data
-    
+        self.parent = None
+
     def printNode(self):
         print(self.data)
 
