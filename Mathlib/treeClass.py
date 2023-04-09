@@ -3,7 +3,6 @@ class EqNode:
         self.left = None
         self.right = None
         self.data = data
-        self.parent = None
 
     def printNode(self):
         print(self.data)
@@ -11,10 +10,22 @@ class EqNode:
 class Stack():
     def __init__(self):
         self.arr = []
+
     def push(self, data):
         self.arr.append(data)
+
     def pop(self):
-        pass
+        if self.size() == 0:
+            return "empty"
+        return self.arr.pop(-1)
+    
+    def top(self):
+        if self.size() == 0:
+            return "empty"
+        return self.arr[-1]
+
+    def size(self):
+        return len(self.arr)
 
 class EqTree:
     def __init__(self, postfix_expr):
