@@ -20,7 +20,8 @@ associativity = {
     '-' : "LR",
 }
 
-def is_operand(element):
+
+def is_operator(element):
     return element in priority.keys()
 
 def check_priority(oper1, oper2):
@@ -35,8 +36,9 @@ def check_priority(oper1, oper2):
 def to_postfix(infix_expr):
     oper_stack = []
     postfix_expr = []
+    
     for elem in infix_expr:
-        if not is_operand(elem):
+        if not is_operator(elem):
             postfix_expr.append(elem)
 
 
@@ -44,3 +46,4 @@ def to_postfix(infix_expr):
 
 def evaluate(input_expr):
     to_postfix(input_expr)
+
