@@ -49,16 +49,15 @@ class EqTree:
         for i in "".join(reversed(expr[:-1])):
             curr_node = tree_stack.top()
             if not curr_node.right:
-            # if right node of current node is NULL
                 temp_node = EqNode(i)
                 curr_node.right = temp_node
                 if self.is_operator(i):
                     tree_stack.push(temp_node)
-            else: # if left node of current node is NULL
+            else: 
                 temp_node = EqNode(i)
                 curr_node.left = temp_node
                 # if no child node of current node is NULL
-                tree_stack.pop() # pop current from stack
+                tree_stack.pop()
                 if self.is_operator(i):
                     tree_stack.push(temp_node)
     
@@ -70,11 +69,11 @@ class EqTree:
             return 0
         
         if not self.is_operator(curr_node.data):
-            return curr_node.data
+            return float(curr_node.data)
 
         left = self.evaluate_tree(curr_node.left)
         right = self.evaluate_tree(curr_node.right)
-        
+
         if curr_node.data == "+":
             return left + right
         elif curr_node.data == "-":
@@ -104,7 +103,7 @@ class EqTree:
     
 
 
-if __name__ == "__main__":
-   postfixExp = "ab+ef*g*-"
-   et = EqTree(postfixExp)
-   et.infixExp()
+# if __name__ == "__main__":
+#    postfixExp = "ab+ef*g*-"
+#    et = EqTree(postfixExp)
+#    et.infixExp()
