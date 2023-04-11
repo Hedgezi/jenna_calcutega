@@ -48,7 +48,7 @@ class EqTree:
 # ****** mathlib.py *********
 
 # Creates a postfix expression from given infix expression
-def infix_to_postfix(infix_expr):
+def to_postfix(infix_expr):
     pass
 
 # Evaluates given infix expression after converting into postfix and building binary tree
