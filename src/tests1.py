@@ -1,5 +1,7 @@
 import unittest
-from Mathlib.mathlib import evaluate
+# changed importing of mathlib
+from Mathlib import mathlib
+# from mathlib import evaluate
 
 class TestSimpleMathLib(unittest.TestCase):
     def testA(self):
@@ -7,7 +9,7 @@ class TestSimpleMathLib(unittest.TestCase):
         assert mathlib.evaluate(equation) == 5
     
     def testB(self):
-        equeation = "3-2"
+        equation = "3-2"
         assert mathlib.evaluate(equation) == 1
 
     def testC(self):
