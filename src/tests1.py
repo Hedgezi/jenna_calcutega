@@ -1,5 +1,5 @@
 import unittest
-from mathlib import evaluate
+from Mathlib.mathlib import evaluate
 
 class TestSimpleMathLib(unittest.TestCase):
     def testA(self):
