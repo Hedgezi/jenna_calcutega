@@ -39,4 +39,4 @@ jobs:
 
       - name: Test with pyunit
         run: |
-          python ./src/tests1.py
+          python ./src/tests/tests_evaluate.py
