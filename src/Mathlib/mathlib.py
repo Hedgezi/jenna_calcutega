@@ -1,5 +1,5 @@
-from Mathlib import treeClass
-
+#from Mathlib import treeClass
+import treeClass
 priority = {
     '!' : 3,
     '^' : 2,
@@ -74,8 +74,16 @@ def to_postfix(infix_expr):
             oper_stack.pop()
             position += 1
         else:
-            postfix_expr.append(elem)
-            position += 1 
+            operand = ''
+            temp_position = position
+            while temp_position < len(infix_expr) and (not is_operator(infix_expr[temp_position])
+                                                  and infix_expr[temp_position] != ')'):
+                operand += infix_expr[temp_position]
+                # print(f"{temp_position} : <{operand}>")
+                temp_position += 1
+
+            postfix_expr.append(operand)
+            position += (temp_position - position)
         # Checking priority
         #if check_priority()
     
@@ -88,12 +96,15 @@ def to_postfix(infix_expr):
 
 
 def evaluate(input_expr):
-    # print(f"INPUT: <{input_expr}>")
+    print(f"INPUT: <{input_expr}>")
+    if input_expr[0] == '-':
+        input_expr = '0'+input_expr
     postfix_expr = to_postfix(input_expr)
-    # print(f"POSTFIX INPUT: <{postfix_expr}>")
-    equation_tree = treeClass.EqTree(postfix_expr)
-    result = equation_tree.evaluate_tree()
+    print(f"POSTFIX INPUT: <{postfix_expr}>")
+    equation_tree = treeClass.EqTree(list(postfix_expr))
+    result = equation_tree.evaluate_tree(equation_tree.root)
     return result
 
 
-
+line = input()
+print(evaluate(line))

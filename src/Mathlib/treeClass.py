@@ -44,11 +44,14 @@ class EqTree:
     def build_tree(self, expr):
         tree_stack = Stack()
         self.root = EqNode(expr[-1]) 
+        # print(f"Root = <{self.root.data}>")
         tree_stack.push(self.root)
         
-        for i in "".join(reversed(expr[:-1])):
+        # for i in "".join(reversed(expr[:-1])):
+        for i in reversed(expr):
+            # print(f"Building: <{i}>")
             curr_node = tree_stack.top()
-            if not curr_node.right:
+            if curr_node.right is None:
                 temp_node = EqNode(i)
                 curr_node.right = temp_node
                 if self.is_operator(i):
@@ -61,19 +64,40 @@ class EqTree:
                 if self.is_operator(i):
                     tree_stack.push(temp_node)
     
-    def evaluate_tree(self, curr_node = None):
-        if curr_node is None: # Initializing start of recursion 
-            curr_node = self.root
+    def new_build_tree(self, expr):
+        tree_stack = Stack()
+        for i in expr:
+            temp_node = EqNode(i)
+            if not self.is_operator(i):
+                tree_stack.push(temp_node)
+            else:
+                # Add !
+                right_value = tree_stack.pop()
+                left_value = tree_stack.pop()
+                temp_node.left = left_value
+                temp
 
-        if curr_node is None: # Checking if tree is empty
+
+
+
+    def evaluate_tree(self, curr_node):
+        if curr_node is None:
             return 0
-        
-        if not self.is_operator(curr_node.data):
+
+        # if curr_node is None: # Checking if tree is empty
+        #     return 0
+        print(f"CN : <{curr_node.data}>")
+        if curr_node.left is None and curr_node.right is None:
             return float(curr_node.data)
+
+        # if not self.is_operator(curr_node.data):
+        #     return float(curr_node.data)
 
         left = self.evaluate_tree(curr_node.left)
         right = self.evaluate_tree(curr_node.right)
-
+        print(f"left = <{left}>")
+        print(f"right = <{right}>")
+        print(f"curr_node data = <{curr_node.data}>")
         if curr_node.data == "+":
             return left + right
         elif curr_node.data == "-":
