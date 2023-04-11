@@ -1,19 +1,58 @@
-Functions:
+# ****** treeClass.py *********
 
-sum(a, b) - adding two numbers , returning sum 
+# Class for Stack realization - Using list
+class Stack():
+    # Constructor
+    def __init__(self):
+        pass
+    # Pushing data into stack
+    def push(self, data):
+        pass
+    # Popping data from stack. Do nothing if empty - no need to throw
+    def pop(self):
+        pass
+    # Getting top data from stack. Do nothing if empty - no need to throw
+    def top(self):
+        pass
+    # Size of stack
+    def size(self):
+        pass
 
-substr(a, b) - substracting , returning 'a - b'
+# Class for Tree Node
+class EqNode:
+    # Constructor
+    def __init__(self, data): 
+        pass
+    # Prints node
+    def printNode(self):
+        pass
 
-multiple(a, b) - a * b
+# Class for Binary Tree 
+class EqTree:
+    # Constructor
+    def __init__(self, postfix_expr):
+        pass
+    # Checking if element is an operator
+    def is_operator(self, element):
+        pass
+    # Create a tree from postfix expression
+    def build_tree(self, expr):
+        pass
+    # Evaluates the tree recursively
+    def evaluate_tree(self, curr_node = None):
+        pass
 
-division(a, b) - a/b
-
-exp(x, n) - x^n
-
-root(x, n) - x^(1/n)
-
-ANOTHER FUNCITON
+# ****** End of treeClass.py *********
 
 
-All data and operations are stored in their own stacks. When UI calls a function, whether unary or binary. Programm pops operands from stack and operation from another and pushes back inside.
+# ****** mathlib.py *********
 
+# Creates a postfix expression from given infix expression
+def infix_to_postfix(infix_expr):
+    pass
+
+# Evaluates given infix expression after converting into postfix and building binary tree
+def evaluate(infix_expr):
+    pass
+
+# ****** End of mathlib.py *********
