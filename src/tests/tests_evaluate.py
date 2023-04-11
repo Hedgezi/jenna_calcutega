@@ -1,7 +1,7 @@
 import unittest
 from mathlib import evaluate
 
-class TestSimpleMathLib(unittest.TestCase):
+class SimpleMathOperationsTest(unittest.TestCase):
     def testA(self):
         equation = "3+2"
         assert mathlib.evaluate(equation) == 5
@@ -46,15 +46,18 @@ class TestSimpleMathLib(unittest.TestCase):
         equation = "-10-20-30-40-50"
         assert mathlib.evaluate(equation) == -150
 
-class MovDivMathLib(unittest.TestCase):
+class MulDivTests(unittest.TestCase):
 
-    def testA(self):
+    def test_mult_by_zero_left(self):
         equation = "0*2"
         assert mathlib.evaluate(equation) == 0
-    def testB(self):
+    def test_mult_by_zero_right(self):
+        equation = "5*2"
+        assert mathlib.evaluate(equation) == 0
+    def test_div_by_one(self):
         equation = "2/1"
         assert mathlib.evaluate(equation) == 2
-    def testC(self):
+    def test_order_mul_div(self):
         equation = "2*3/6"
         assert mathlib.evaluate(equation) == 1
 
@@ -96,7 +99,25 @@ class OrderPowMathLib(unittest.TestCase):
         equation = "3.5^2"
         assert mathlib.evaluate(equation) == 12.25
 
-    #5/0, 3.5!, (-3)!, (-4)^(1/2) non defined
+    def test_div_by_zero(self):
+        equation = "2/0"
+        assert mathlib.evaluate(equation) == "undef"
+
+    def test_negative_factorial(self):
+        equation = "(-3)!"
+        assert mathlib.evaluate(equation) == "undef"
+    
+    def test_negative_root(self):
+        equation = "(-4)^(1/2)"
+        assert mathlib.evaluate(equation) == "undef"
+
+    def test_unnatural_factorial(self):
+        equation = "3.5!"
+        assert mathlib.evaluate(equation) == "undef"
+    
+    def test_zero_factorial(self):
+        equation = "0!"
+        assert mathlib.evaluate(equation) == 1
     
 
 if __name__ == '__main__':
