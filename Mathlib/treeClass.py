@@ -72,14 +72,21 @@ class EqTree:
         if not self.is_operator(curr_node.data):
             return curr_node.data
 
-    
-    
-    
-    
-    
-    
-    
-    
+        left = self.evaluate_tree(curr_node.left)
+        right = self.evaluate_tree(curr_node.right)
+        
+        if curr_node.data == "+":
+            return left + right
+        elif curr_node.data == "-":
+            return left - right
+        elif curr_node.data == "*":
+            return left * right
+        elif curr_node.data == "/":
+            return left / right
+        elif curr_node.data == "^":
+            return left ** right
+
+
     def inorder(self, head):
       # inorder traversal of expression tree
       # inorder traversal = > left, root, right
@@ -88,6 +95,8 @@ class EqTree:
         print(head.data, end=" ")
         if head.right:
             self.inorder(head.right)
+    
+
     def infixExp(self):
       # inorder traversal of expression tree give infix expression
         self.inorder(self.root)
