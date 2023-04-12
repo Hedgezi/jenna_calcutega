@@ -48,7 +48,7 @@ class EqTree:
         tree_stack.push(self.root)
         
         # for i in "".join(reversed(expr[:-1])):
-        for i in reversed(expr):
+        for i in reversed(expr[:-1]):
             # print(f"Building: <{i}>")
             curr_node = tree_stack.top()
             if curr_node.right is None:
@@ -75,7 +75,7 @@ class EqTree:
                 right_value = tree_stack.pop()
                 left_value = tree_stack.pop()
                 temp_node.left = left_value
-                temp
+                # temp
 
 
 

@@ -1,5 +1,5 @@
-#from Mathlib import treeClass
-import treeClass
+from Mathlib import treeClass
+# import treeClass
 priority = {
     '!' : 3,
     '^' : 2,
@@ -106,5 +106,5 @@ def evaluate(input_expr):
     return result
 
 
-line = input()
-print(evaluate(line))
+# line = input()
+# print(evaluate(line))
