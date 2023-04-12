@@ -41,4 +41,4 @@ jobs:
       - name: Test with pyunit
         run: |
           python ./src/tests.py
-        continue-on-error: true
+          
