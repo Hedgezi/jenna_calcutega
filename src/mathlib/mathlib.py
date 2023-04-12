@@ -1,5 +1,7 @@
-from mathlib import treeClass
-# import treeClass
+# from mathlib import treeClass
+# from . import treeClass
+import treeClass
+ 
 priority = {
     '!' : 3,
     '^' : 2,
@@ -100,11 +102,12 @@ def evaluate(input_expr):
     if input_expr[0] == '-':
         input_expr = '0'+input_expr
     postfix_expr = to_postfix(input_expr)
-    # print(f"POSTFIX INPUT: <{postfix_expr}>")
+    print(f"POSTFIX INPUT: <{postfix_expr}>")
     equation_tree = treeClass.EqTree(list(postfix_expr))
     result = equation_tree.evaluate_tree(equation_tree.root)
     return result
 
 
-# line = input()
-# print(evaluate(line))
+
+line = input()
+print(evaluate(line))
