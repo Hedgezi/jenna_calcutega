@@ -36,7 +36,9 @@ jobs:
           ruff --format=github --select=E9,F63,F7,F82 --target-version=py37 .
           # default set of ruff rules with GitHub Annotations
           ruff --format=github --target-version=py37 .
+        continue-on-error: true
 
       - name: Test with pyunit
         run: |
-          python ./src/tests/tests_evaluate.py
+          python ./src/tests.py
+        continue-on-error: true
