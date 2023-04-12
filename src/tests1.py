@@ -1,6 +1,6 @@
 import unittest
 # changed importing of mathlib
-from Mathlib import mathlib
+from mathlib import mathlib
 # from mathlib import evaluate
 
 class TestSimpleMathLib(unittest.TestCase):
