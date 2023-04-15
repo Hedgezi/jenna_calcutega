@@ -1,6 +1,6 @@
-# from mathlib import treeClass
+from mathlib import treeClass
 # from . import treeClass
-import treeClass
+# import treeClass
  
 priority = {
     '!' : 3,
