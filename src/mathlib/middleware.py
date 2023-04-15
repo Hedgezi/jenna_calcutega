@@ -9,6 +9,7 @@ class IncorrectBracketsError(Exception):
 
 def check_experssion(expr: str):
     brackets_count = 0
+    expr.replace(' ', '')
     for i, elem in enumerate(expr):
         if elem == '(':
             brackets_count += 1
