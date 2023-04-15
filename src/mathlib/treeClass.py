@@ -1,3 +1,4 @@
+import math
 class EqNode:
     def __init__(self, data):
         self.left = None
@@ -96,6 +97,10 @@ class EqTree:
             return left / right
         elif curr_node.data == "^":
             return left ** right
+        elif curr_node.data == '!':
+            return math.factorial(int(right))
+        elif curr_node.data == '%':
+            return left % right
 
 
     def inorder(self, head):

@@ -99,8 +99,8 @@ def to_postfix(infix_expr):
 
 def evaluate(input_expr):
     # print(f"INPUT: <{input_expr}>")
-    if input_expr[0] == '-':
-        input_expr = '0'+input_expr
+    # if input_expr[0] == '-':
+    #     input_expr = '0'+input_expr
     postfix_expr = to_postfix(input_expr)
     # print(f"POSTFIX INPUT: <{postfix_expr}>")
     equation_tree = treeClass.EqTree(list(postfix_expr))
