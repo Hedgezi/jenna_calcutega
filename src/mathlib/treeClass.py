@@ -64,18 +64,6 @@ class EqTree:
                 if self.is_operator(i):
                     tree_stack.push(temp_node)
     
-    def new_build_tree(self, expr):
-        tree_stack = Stack()
-        for i in expr:
-            temp_node = EqNode(i)
-            if not self.is_operator(i):
-                tree_stack.push(temp_node)
-            else:
-                # Add !
-                right_value = tree_stack.pop()
-                left_value = tree_stack.pop()
-                temp_node.left = left_value
-                # temp
 
 
 
