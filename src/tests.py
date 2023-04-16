@@ -49,11 +49,26 @@ class SimpleMathOperationsTest(unittest.TestCase):
 
 class MulDivTests(unittest.TestCase):
 
+    def test_mul(self):
+        equation = "2*3"
+        assert evaluate(equation) == 6
+    def test_div(self):
+        equation = "6/3"
+        assert evaluate(equation) == 2
+    def test_mul_div(self):
+        equation = "2*3/6"
+        assert evaluate(equation) == 1
+    def test_div_float(self):
+        equation = "2/3"
+        assert evaluate(equation) == 0.6666666666666666
+    def test_div_mul_float(self):
+        equation = "2/3*6"
+        assert evaluate(equation) == 4
     def test_mult_by_zero_left(self):
         equation = "0*2"
         assert evaluate(equation) == 0
     def test_mult_by_zero_right(self):
-        equation = "5*2"
+        equation = "5*0"
         assert evaluate(equation) == 0
     def test_div_by_one(self):
         equation = "2/1"
