@@ -30,6 +30,13 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.but_minus.clicked.connect(lambda: self.add_symbol("-"))
         self.but_mult.clicked.connect(lambda: self.add_symbol("*")) # ×
         self.but_div.clicked.connect(lambda: self.add_symbol("/")) # ÷
+        self.but_pow.clicked.connect(lambda: self.add_symbol("^"))
+        self.but_fact.clicked.connect(lambda: self.add_symbol("!"))
+        self.but_bracket_open.clicked.connect(lambda: self.add_symbol("("))
+        self.but_bracket_close.clicked.connect(lambda: self.add_symbol(")"))
+        self.but_modulo.clicked.connect(lambda: self.add_symbol("%"))
+
+        self.but_sqrt.clicked.connect(self.add_root)
 
         self.but_c.clicked.connect(self.clear)
         self.but_bs.clicked.connect(self.backspace)
@@ -43,6 +50,9 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     
     def backspace(self):
         self.lineEdit.setText(self.lineEdit.text()[:-1])
+
+    def add_root(self):
+        self.lineEdit.setText(self.lineEdit.text() + "^(1/")
 
 
 app = QtWidgets.QApplication(sys.argv)

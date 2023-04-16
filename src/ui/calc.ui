@@ -92,8 +92,8 @@ background-color: rgba(0, 0, 0, 0.2);</string>
       <property name="sizeConstraint">
        <enum>QLayout::SetDefaultConstraint</enum>
       </property>
-      <item row="4" column="3">
-       <widget class="QPushButton" name="but_6">
+      <item row="5" column="2">
+       <widget class="QPushButton" name="but_2">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
           <horstretch>0</horstretch>
@@ -111,10 +111,88 @@ background-color: rgba(0, 0, 0, 0.2);</string>
          <locale language="English" country="UnitedStates"/>
         </property>
         <property name="text">
-         <string>6</string>
+         <string>2</string>
         </property>
         <property name="shortcut">
-         <string>6</string>
+         <string>2</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="2">
+       <widget class="QPushButton" name="but_5">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <family>Open Sans</family>
+          <pointsize>22</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="locale">
+         <locale language="English" country="UnitedStates"/>
+        </property>
+        <property name="text">
+         <string>5</string>
+        </property>
+        <property name="shortcut">
+         <string>5</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="2">
+       <widget class="QPushButton" name="but_0">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <family>Open Sans</family>
+          <pointsize>22</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="locale">
+         <locale language="English" country="UnitedStates"/>
+        </property>
+        <property name="text">
+         <string>0</string>
+        </property>
+        <property name="shortcut">
+         <string>0</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="4">
+       <widget class="QPushButton" name="but_mult">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <family>Open Sans</family>
+          <pointsize>22</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="locale">
+         <locale language="English" country="UnitedStates"/>
+        </property>
+        <property name="text">
+         <string>×</string>
+        </property>
+        <property name="shortcut">
+         <string>*</string>
         </property>
        </widget>
       </item>
@@ -144,8 +222,8 @@ background-color: rgba(0, 0, 0, 0.2);</string>
         </property>
        </widget>
       </item>
-      <item row="6" column="1">
-       <widget class="QPushButton" name="but_sign">
+      <item row="4" column="1">
+       <widget class="QPushButton" name="but_4">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
           <horstretch>0</horstretch>
@@ -163,38 +241,15 @@ background-color: rgba(0, 0, 0, 0.2);</string>
          <locale language="English" country="UnitedStates"/>
         </property>
         <property name="text">
-         <string>+/-</string>
-        </property>
-       </widget>
-      </item>
-      <item row="5" column="1">
-       <widget class="QPushButton" name="but_1">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="font">
-         <font>
-          <family>Open Sans</family>
-          <pointsize>22</pointsize>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="locale">
-         <locale language="English" country="UnitedStates"/>
-        </property>
-        <property name="text">
-         <string>1</string>
+         <string>4</string>
         </property>
         <property name="shortcut">
-         <string>1</string>
+         <string>4</string>
         </property>
        </widget>
       </item>
-      <item row="2" column="2">
-       <widget class="QPushButton" name="but_pow">
+      <item row="6" column="3">
+       <widget class="QPushButton" name="but_point">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
           <horstretch>0</horstretch>
@@ -212,59 +267,10 @@ background-color: rgba(0, 0, 0, 0.2);</string>
          <locale language="English" country="UnitedStates"/>
         </property>
         <property name="text">
-         <string>xⁿ</string>
+         <string>.</string>
         </property>
         <property name="shortcut">
-         <string>^</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="1">
-       <widget class="QPushButton" name="but_7">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="font">
-         <font>
-          <family>Open Sans</family>
-          <pointsize>22</pointsize>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="locale">
-         <locale language="English" country="UnitedStates"/>
-        </property>
-        <property name="text">
-         <string>7</string>
-        </property>
-        <property name="shortcut">
-         <string>7</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="2">
-       <widget class="QPushButton" name="but_ce">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="font">
-         <font>
-          <family>Open Sans</family>
-          <pointsize>22</pointsize>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="locale">
-         <locale language="English" country="UnitedStates"/>
-        </property>
-        <property name="text">
-         <string>CE</string>
+         <string>.</string>
         </property>
        </widget>
       </item>
@@ -294,7 +300,215 @@ background-color: rgba(0, 0, 0, 0.2);</string>
         </property>
        </widget>
       </item>
-      <item row="2" column="1">
+      <item row="5" column="3">
+       <widget class="QPushButton" name="but_3">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <family>Open Sans</family>
+          <pointsize>22</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="locale">
+         <locale language="English" country="UnitedStates"/>
+        </property>
+        <property name="text">
+         <string>3</string>
+        </property>
+        <property name="shortcut">
+         <string>3</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QPushButton" name="but_7">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <family>Open Sans</family>
+          <pointsize>22</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="locale">
+         <locale language="English" country="UnitedStates"/>
+        </property>
+        <property name="text">
+         <string>7</string>
+        </property>
+        <property name="shortcut">
+         <string>7</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="1">
+       <widget class="QPushButton" name="but_1">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <family>Open Sans</family>
+          <pointsize>22</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="locale">
+         <locale language="English" country="UnitedStates"/>
+        </property>
+        <property name="text">
+         <string>1</string>
+        </property>
+        <property name="shortcut">
+         <string>1</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="3">
+       <widget class="QPushButton" name="but_6">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <family>Open Sans</family>
+          <pointsize>22</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="locale">
+         <locale language="English" country="UnitedStates"/>
+        </property>
+        <property name="text">
+         <string>6</string>
+        </property>
+        <property name="shortcut">
+         <string>6</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="2">
+       <widget class="QPushButton" name="but_8">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <family>Open Sans</family>
+          <pointsize>22</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="locale">
+         <locale language="English" country="UnitedStates"/>
+        </property>
+        <property name="text">
+         <string>8</string>
+        </property>
+        <property name="shortcut">
+         <string>8</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="4">
+       <widget class="QPushButton" name="but_plus">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <family>Open Sans</family>
+          <pointsize>22</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="locale">
+         <locale language="English" country="UnitedStates"/>
+        </property>
+        <property name="text">
+         <string>+</string>
+        </property>
+        <property name="shortcut">
+         <string>+</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="4">
+       <widget class="QPushButton" name="but_div">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <family>Open Sans</family>
+          <pointsize>22</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="locale">
+         <locale language="English" country="UnitedStates"/>
+        </property>
+        <property name="text">
+         <string>÷</string>
+        </property>
+        <property name="shortcut">
+         <string>/</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="4">
+       <widget class="QPushButton" name="but_equals">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <family>Open Sans</family>
+          <pointsize>22</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="locale">
+         <locale language="English" country="UnitedStates"/>
+        </property>
+        <property name="text">
+         <string>=</string>
+        </property>
+        <property name="shortcut">
+         <string>=</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="1">
        <widget class="QPushButton" name="but_fact">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
@@ -320,7 +534,33 @@ background-color: rgba(0, 0, 0, 0.2);</string>
         </property>
        </widget>
       </item>
-      <item row="0" column="4">
+      <item row="1" column="3">
+       <widget class="QPushButton" name="but_c">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <family>Open Sans</family>
+          <pointsize>22</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="locale">
+         <locale language="English" country="UnitedStates"/>
+        </property>
+        <property name="text">
+         <string>C</string>
+        </property>
+        <property name="shortcut">
+         <string>Del</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="4">
        <widget class="QPushButton" name="but_bs">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
@@ -356,8 +596,8 @@ background-color: rgba(0, 0, 0, 0.2);</string>
         </property>
        </widget>
       </item>
-      <item row="6" column="3">
-       <widget class="QPushButton" name="but_point">
+      <item row="1" column="1">
+       <widget class="QPushButton" name="but_pow">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
           <horstretch>0</horstretch>
@@ -375,14 +615,14 @@ background-color: rgba(0, 0, 0, 0.2);</string>
          <locale language="English" country="UnitedStates"/>
         </property>
         <property name="text">
-         <string>.</string>
+         <string>xⁿ</string>
         </property>
         <property name="shortcut">
-         <string>.</string>
+         <string>^</string>
         </property>
        </widget>
       </item>
-      <item row="2" column="3">
+      <item row="1" column="2">
        <widget class="QPushButton" name="but_sqrt">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
@@ -405,8 +645,8 @@ background-color: rgba(0, 0, 0, 0.2);</string>
         </property>
        </widget>
       </item>
-      <item row="2" column="4">
-       <widget class="QPushButton" name="but_div">
+      <item row="2" column="3">
+       <widget class="QPushButton" name="but_modulo">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
           <horstretch>0</horstretch>
@@ -424,15 +664,15 @@ background-color: rgba(0, 0, 0, 0.2);</string>
          <locale language="English" country="UnitedStates"/>
         </property>
         <property name="text">
-         <string>÷</string>
+         <string>%</string>
         </property>
         <property name="shortcut">
-         <string>/</string>
+         <string>%</string>
         </property>
        </widget>
       </item>
-      <item row="5" column="2">
-       <widget class="QPushButton" name="but_2">
+      <item row="2" column="1">
+       <widget class="QPushButton" name="but_bracket_open">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
           <horstretch>0</horstretch>
@@ -450,15 +690,15 @@ background-color: rgba(0, 0, 0, 0.2);</string>
          <locale language="English" country="UnitedStates"/>
         </property>
         <property name="text">
-         <string>2</string>
+         <string>(</string>
         </property>
         <property name="shortcut">
-         <string>2</string>
+         <string>(</string>
         </property>
        </widget>
       </item>
-      <item row="4" column="1">
-       <widget class="QPushButton" name="but_4">
+      <item row="2" column="2">
+       <widget class="QPushButton" name="but_bracket_close">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
           <horstretch>0</horstretch>
@@ -476,241 +716,10 @@ background-color: rgba(0, 0, 0, 0.2);</string>
          <locale language="English" country="UnitedStates"/>
         </property>
         <property name="text">
-         <string>4</string>
+         <string>)</string>
         </property>
         <property name="shortcut">
-         <string>4</string>
-        </property>
-       </widget>
-      </item>
-      <item row="5" column="3">
-       <widget class="QPushButton" name="but_3">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="font">
-         <font>
-          <family>Open Sans</family>
-          <pointsize>22</pointsize>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="locale">
-         <locale language="English" country="UnitedStates"/>
-        </property>
-        <property name="text">
-         <string>3</string>
-        </property>
-        <property name="shortcut">
-         <string>3</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="3">
-       <widget class="QPushButton" name="but_c">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="font">
-         <font>
-          <family>Open Sans</family>
-          <pointsize>22</pointsize>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="locale">
-         <locale language="English" country="UnitedStates"/>
-        </property>
-        <property name="text">
-         <string>C</string>
-        </property>
-        <property name="shortcut">
-         <string>Del</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="4">
-       <widget class="QPushButton" name="but_mult">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="font">
-         <font>
-          <family>Open Sans</family>
-          <pointsize>22</pointsize>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="locale">
-         <locale language="English" country="UnitedStates"/>
-        </property>
-        <property name="text">
-         <string>×</string>
-        </property>
-        <property name="shortcut">
-         <string>*</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="2">
-       <widget class="QPushButton" name="but_8">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="font">
-         <font>
-          <family>Open Sans</family>
-          <pointsize>22</pointsize>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="locale">
-         <locale language="English" country="UnitedStates"/>
-        </property>
-        <property name="text">
-         <string>8</string>
-        </property>
-        <property name="shortcut">
-         <string>8</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="1">
-       <widget class="QPushButton" name="but8_9">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="font">
-         <font>
-          <family>Open Sans</family>
-          <pointsize>22</pointsize>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="locale">
-         <locale language="English" country="UnitedStates"/>
-        </property>
-        <property name="text">
-         <string>?</string>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="2">
-       <widget class="QPushButton" name="but_5">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="font">
-         <font>
-          <family>Open Sans</family>
-          <pointsize>22</pointsize>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="locale">
-         <locale language="English" country="UnitedStates"/>
-        </property>
-        <property name="text">
-         <string>5</string>
-        </property>
-        <property name="shortcut">
-         <string>5</string>
-        </property>
-       </widget>
-      </item>
-      <item row="6" column="4">
-       <widget class="QPushButton" name="but_equals">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="font">
-         <font>
-          <family>Open Sans</family>
-          <pointsize>22</pointsize>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="locale">
-         <locale language="English" country="UnitedStates"/>
-        </property>
-        <property name="text">
-         <string>=</string>
-        </property>
-        <property name="shortcut">
-         <string>=</string>
-        </property>
-       </widget>
-      </item>
-      <item row="6" column="2">
-       <widget class="QPushButton" name="but_0">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="font">
-         <font>
-          <family>Open Sans</family>
-          <pointsize>22</pointsize>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="locale">
-         <locale language="English" country="UnitedStates"/>
-        </property>
-        <property name="text">
-         <string>0</string>
-        </property>
-        <property name="shortcut">
-         <string>0</string>
-        </property>
-       </widget>
-      </item>
-      <item row="5" column="4">
-       <widget class="QPushButton" name="but_plus">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="font">
-         <font>
-          <family>Open Sans</family>
-          <pointsize>22</pointsize>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="locale">
-         <locale language="English" country="UnitedStates"/>
-        </property>
-        <property name="text">
-         <string>+</string>
-        </property>
-        <property name="shortcut">
-         <string>+</string>
+         <string>)</string>
         </property>
        </widget>
       </item>
