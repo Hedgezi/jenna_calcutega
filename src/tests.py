@@ -1,5 +1,5 @@
 import unittest
-from middleware import Expression
+from middleware import *
 
 class SimpleMathOperationsTest(unittest.TestCase):
     
@@ -117,20 +117,20 @@ class OrderPowMathLib(unittest.TestCase):
 
     def test_div_by_zero(self):
         equation = "2/0"
-        assert Expression(equation).result == "undef"
+        self.assertRaises(ZeroDivisionError, Expression(equation))
 
     def test_negative_factorial(self):
         equation = "(-3)!"
-        assert Expression(equation).result == "undef"
+        self.assertRaises(ValueError, Expression(equation).result)
     
     def test_negative_root(self):
         equation = "(-4)^(1/2)"
-        assert Expression(equation).result == "undef"
+        self.assertRaises(ValueError, Expression(equation).result)
 
     def test_unnatural_factorial(self):
         equation = "3.5!"
-        assert Expression(equation).result == "undef"
-    
+        self.assertRaises(ValueError, Expression(equation).result)
+
     def test_zero_factorial(self):
         equation = "0!"
         assert Expression(equation).result == 1
