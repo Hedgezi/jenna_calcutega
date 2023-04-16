@@ -3,7 +3,9 @@ from PyQt6 import QtWidgets, uic
 from PyQt6.QtCore import QRegularExpression
 from PyQt6.QtGui import QFontDatabase, QRegularExpressionValidator
 
-from calc import Ui_MainWindow
+from middleware import *
+
+from ui.calc import Ui_MainWindow
 
 ## Main Window class
 # Importing the UI file from calc.py
@@ -11,7 +13,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__(self, *args, obj=None, **kwargs):
         super(MainWindow, self).__init__(*args, **kwargs)
         self.setupUi(self)
-        QFontDatabase.addApplicationFont("fonts/OpenSans.ttf")
+        QFontDatabase.addApplicationFont("ui/fonts/OpenSans.ttf")
         self.lineEdit.setValidator(QRegularExpressionValidator(QRegularExpression("[0-9+-.*/!()^]*")))
 
         # Connect buttons to text input
@@ -41,6 +43,8 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.but_c.clicked.connect(self.clear)
         self.but_bs.clicked.connect(self.backspace)
 
+        self.but_equals.clicked.connect(self.calculate)
+
 
     def add_symbol(self, symbol):
         self.lineEdit.setText(self.lineEdit.text() + symbol)
@@ -53,6 +57,13 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def add_root(self):
         self.lineEdit.setText(self.lineEdit.text() + "^(1/")
+
+    def calculate(self):
+        cur_expr = Expression(self.lineEdit.text())
+        if (int(cur_expr.result) == cur_expr.result):
+            self.lineEdit.setText(str(int(cur_expr.result)))
+        else:
+            self.lineEdit.setText(str(cur_expr.result))
 
 
 app = QtWidgets.QApplication(sys.argv)

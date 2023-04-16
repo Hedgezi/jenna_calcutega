@@ -8,7 +8,7 @@
 
 from PyQt6 import QtCore, QtGui, QtWidgets
 
-import resources
+from . import resources
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
