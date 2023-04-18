@@ -124,6 +124,8 @@ class EqTree:
         elif curr_node.data == "^":
             return left ** right
         elif curr_node.data == '!':
+            if int(right) != right:
+                raise ValueError
             return math.factorial(int(right))
         elif curr_node.data == '%':
             return left % right
