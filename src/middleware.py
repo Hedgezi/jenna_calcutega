@@ -1,14 +1,18 @@
 """@package middleware
-Module"""
+Module that contains functions to prepare expression for evaluation"""
 
 import mathlib
 
 truly_binary_operations = '*/%^'
 half_binary_operations = '+-'
 
+"""@class BinaryOperationError
+Exception that is raised when binary operation is not between two operands"""
 class BinaryOperationError(Exception):
     pass
 
+"""@class IncorrectBracketsError
+Exception that is raised when incorrect number of brackets are closed or opened"""
 class IncorrectBracketsError(Exception):
     pass
 
@@ -19,7 +23,10 @@ class IncorrectBracketsError(Exception):
 #         if 
 #     return expr
 
-def check_experssion(expr: str):
+
+"""@function check_binarity
+Function that checks if binary operations are between two operands or, in case of unary operations, if they are not at the beginning or end of the expression"""
+def check_binarity(expr: str):
     for i, elem in enumerate(expr):
         
         if elem in truly_binary_operations:
@@ -33,6 +40,8 @@ def check_experssion(expr: str):
             if i == len(expr) - 1 and (not (expr[i+1].isdigit() or expr[i+1] == '(')):
                 raise BinaryOperationError()     
 
+"""@function check_brackets
+Function that checks if number of opened brackets is equal to number of closed brackets"""
 def check_brackets(expr: str):
     brackets = []
     for elem in expr:
@@ -46,6 +55,8 @@ def check_brackets(expr: str):
     if len(brackets) != 0:
         raise IncorrectBracketsError()
     
+"""@function add_zeros
+Function that adds zeros before unary minus operation"""
 def add_zeros(expr: str):
     for i, elem in enumerate(expr):
         if elem == '-':
@@ -55,10 +66,12 @@ def add_zeros(expr: str):
                 expr = expr[:i] + '0' + expr[i:]
     return expr
 
+"""@function prepare_expression
+Function that prepares expression for evaluation using all other middleware functions"""
 def prepare_expression(expr: str):
     temp = expr.replace(' ', '')
     check_brackets(temp)
-    check_experssion(temp)
+    check_binarity(temp)
     temp = add_zeros(temp)
     return temp
 
