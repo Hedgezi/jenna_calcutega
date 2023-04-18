@@ -4,7 +4,7 @@ Module with Classes to build expression tree from postfix expression
 
 """
 
-import math
+import math, logging
 
 class EqNode:
     """ Equation tree node class to represent data (operators/operands) and two child nodes."""
@@ -77,17 +77,13 @@ class EqTree:
         tree_stack.push(self.root)
         
         for i in reversed(expr[:-1]):
-            # print(f"Building: <{i}>")
+            logging.debug(f"Building: <{i}>")
             curr_node = tree_stack.top()
             if curr_node.right is None:
                 temp_node = EqNode(i)
                 curr_node.right = temp_node
                 if self.is_operator(i):
                     tree_stack.push(temp_node)
-                # Temporary section
-                # if curr_node.data == '!':
-                #     curr_node.left = EqNode(0)
-                # Temporary section
             else: 
                 while curr_node.data == '!':
                     curr_node = tree_stack.pop()

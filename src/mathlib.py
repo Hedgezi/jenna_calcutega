@@ -3,6 +3,7 @@ Module with functions to convert and evaluate expression using expression tree
 """
 
 import treeClass
+import logging
  
 """Priorities of operators"""
 priority = {
@@ -92,13 +93,11 @@ def to_postfix(infix_expr):
             while temp_position < len(infix_expr) and (not is_operator(infix_expr[temp_position])
                                                   and infix_expr[temp_position] != ')'):
                 operand += infix_expr[temp_position]
-                # print(f"{temp_position} : <{operand}>")
+                logging.debug(f"{temp_position} : <{operand}>")
                 temp_position += 1
 
             postfix_expr.append(operand)
             position += (temp_position - position)
-        # Checking priority
-        #if check_priority()
     
     #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! neverending story
     while oper_stack.size() != 0:    
@@ -111,16 +110,14 @@ def to_postfix(infix_expr):
 @param input_expr Given inout expression
 @return result Evaluation result"""
 def evaluate(input_expr):
-    print(f"INPUT: <{input_expr}>")
-    # if input_expr[0] == '-':
-    #     input_expr = '0'+input_expr
+    logging.debug(f"INPUT: <{input_expr}>")
     postfix_expr = to_postfix(input_expr)
-    print(f"POSTFIX INPUT: <{postfix_expr}>")
+    logging.debug(f"POSTFIX INPUT: <{postfix_expr}>")
     equation_tree = treeClass.EqTree(list(postfix_expr))
     result = equation_tree.evaluate_tree(equation_tree.root)
     return result
 
-
-
-# line = input()
-# print(evaluate(line))
+if __name__ == "__main__":
+    logging.basicConfig(level=logging.DEBUG)
+    line = input()
+    print(evaluate(line))

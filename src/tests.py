@@ -137,11 +137,12 @@ class OrderPowMathLib(unittest.TestCase):
         assert evaluate(prepare_expression(equation)) == 1
 
     def test_remaider_of_division_by_zero(self):
-        self.assertRaises(ZeroDivisionError, evaluate(prepare_expression('5%0')))
+        self.assertRaises(ZeroDivisionError, lambda: evaluate(prepare_expression('5%0')))
 
     def test_remainder_of_division_by_one(self):
         equation = "5%1"
         assert evaluate(prepare_expression(equation)) == 0
+        
     def test_remainder_of_division_by_negative_number_without_brackets(self):
         equation = "5%-2"
         assert evaluate(prepare_expression(equation)) == -1
@@ -157,7 +158,7 @@ class AdvancedTestsMathLib(unittest.TestCase):
         equation = "4!-5!/5+3!"
         assert evaluate(prepare_expression(equation)) == 6
 
-    def test_factorial_and_arithmetic_operations_with_brackets(self):
+    def test_factorial_and_arithmetic_operations_with_brackets(self): # don't work
         equation = "(4!-5!)/(2+3!)"
         assert evaluate(prepare_expression(equation)) == -12
 
@@ -174,23 +175,23 @@ class AdvancedTestsMathLib(unittest.TestCase):
         assert evaluate(prepare_expression(equation)) == 19.809
 
     def test_brackets_not_close(self):
-        self.assertRaises(IncorrectBracketsError, evaluate(prepare_expression("(2+3-5")))
+        self.assertRaises(IncorrectBracketsError, lambda: evaluate(prepare_expression("(2+3-5")))
 
     def test_brackets_not_open(self):
-        self.assertRaises(IncorrectBracketsError, evaluate(prepare_expression("2+3)-5")))
+        self.assertRaises(IncorrectBracketsError, lambda: evaluate(prepare_expression("2+3)-5")))
 
     def test_arithmetics_operation_near(self):
-        self.assertRaises(BinaryOperationError, evaluate(prepare_expression("2+*3-^4")))
+        self.assertRaises(BinaryOperationError, lambda: evaluate(prepare_expression("2+*3-^4")))
 
     def test_arithmetics_operation_near_2(self):
-        self.assertRaises(BinaryOperationError, evaluate(prepare_expression("2+3-4*")))
+        self.assertRaises(BinaryOperationError, lambda: evaluate(prepare_expression("2+3-4*")))
 
     def test_factorial_float_brackets(self):
-        self.assertRaises(ValueError, evaluate(prepare_expression("(3+3.5)!")))
+        self.assertRaises(ValueError, lambda: evaluate(prepare_expression("(3+3.5)!")))
 
 class BracketsTestMathLib(unittest.TestCase):
     def test_brackets_1(self):
-        equation = "((((3+7)/(3-1))*(6!-5!))-5^2"
+        equation = "(((3+7)/(3-1))*(6!-5!))-5^2"
         assert evaluate(prepare_expression(equation)) == 2975
 
     def test_brackets_2(self):
@@ -210,7 +211,7 @@ class BracketsTestMathLib(unittest.TestCase):
         assert evaluate(prepare_expression(equation)) == 30
 
     def test_brackets_6(self):
-        equation = "((5+7)*(3-4)*((3^2)-4^(1/2))/10"
+        equation = "((5+7)*(3-4)*((3^2)-4^(1/2)))/10"
         assert evaluate(prepare_expression(equation)) == -8.4
 
     def test_brackets_7(self):  
@@ -226,4 +227,9 @@ class BracketsTestMathLib(unittest.TestCase):
         assert evaluate(prepare_expression(equation)) == 10000000000000000000000
 
 if __name__ == '__main__':
+    try:
+        evaluate(prepare_expression("(-4)^(1/2)"))
+    except ValueError:
+        print("You can't take a root from a negative number")
+        pass
     unittest.main()
