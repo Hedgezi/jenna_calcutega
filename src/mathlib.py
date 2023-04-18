@@ -1,5 +1,10 @@
+"""@package mathlib
+Module with functions to convert and evaluate expression using expression tree
+"""
+
 import treeClass
  
+"""Priorities of operators"""
 priority = {
     '!' : 3,
     '^' : 2,
@@ -10,6 +15,7 @@ priority = {
     '-' : 0,
 }
 
+"""Associativity of operators"""
 associativity = {
     '!' : "unar",
     '^' : "RL",
@@ -20,10 +26,15 @@ associativity = {
     '-' : "LR",
 }
 
-
+"""Checks if element is an operator
+@param element Element of expression to be checked"""
 def is_operator(element):
     return element in priority.keys()
 
+"""Checks if priority of the first is higher/lower/equal than priority of the second operator
+@param oper1 The first operator 
+@param oper2 The second operator
+"""
 def check_priority(oper1, oper2):
     
     if priority[oper1] > priority[oper2]:
@@ -34,7 +45,9 @@ def check_priority(oper1, oper2):
         return 0
     
 
-
+"""Converts infix expression into postfix expression
+@param infix_expr Given infix expression
+@return Postfix expression"""
 def to_postfix(infix_expr):
     oper_stack = treeClass.Stack()
     postfix_expr = []
@@ -94,13 +107,15 @@ def to_postfix(infix_expr):
     return postfix_expr
 
 
-
+"""Function to be called from side modules. Evaluates an input expression. Converting into postfix, building expression tree and evaluating it
+@param input_expr Given inout expression
+@return result Evaluation result"""
 def evaluate(input_expr):
-    # print(f"INPUT: <{input_expr}>")
+    print(f"INPUT: <{input_expr}>")
     # if input_expr[0] == '-':
     #     input_expr = '0'+input_expr
     postfix_expr = to_postfix(input_expr)
-    # print(f"POSTFIX INPUT: <{postfix_expr}>")
+    print(f"POSTFIX INPUT: <{postfix_expr}>")
     equation_tree = treeClass.EqTree(list(postfix_expr))
     result = equation_tree.evaluate_tree(equation_tree.root)
     return result
