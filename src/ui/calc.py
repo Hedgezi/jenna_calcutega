@@ -450,7 +450,7 @@ class Ui_MainWindow(object):
         self.but_div.setText(_translate("MainWindow", "÷"))
         self.but_div.setShortcut(_translate("MainWindow", "/"))
         self.but_equals.setText(_translate("MainWindow", "="))
-        self.but_equals.setShortcut(_translate("MainWindow", "="))
+        self.but_equals.setShortcut(_translate("MainWindow", "Return"))
         self.but_fact.setText(_translate("MainWindow", "n!"))
         self.but_fact.setShortcut(_translate("MainWindow", "!"))
         self.but_c.setText(_translate("MainWindow", "C"))

@@ -504,7 +504,7 @@ background-color: rgba(0, 0, 0, 0.2);</string>
          <string>=</string>
         </property>
         <property name="shortcut">
-         <string>=</string>
+         <string>Return</string>
         </property>
        </widget>
       </item>

@@ -1,9 +1,10 @@
 import sys
-from PyQt6 import QtWidgets, uic
+from PyQt6 import QtWidgets
 from PyQt6.QtCore import QRegularExpression
 from PyQt6.QtGui import QFontDatabase, QRegularExpressionValidator
 
-from middleware import *
+from middleware import prepare_expression
+from mathlib import evaluate
 
 from ui.calc import Ui_MainWindow
 
@@ -59,11 +60,12 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.lineEdit.setText(self.lineEdit.text() + "^(1/")
 
     def calculate(self):
-        cur_expr = Expression(self.lineEdit.text())
-        if (int(cur_expr.result) == cur_expr.result):
-            self.lineEdit.setText(str(int(cur_expr.result)))
+        cur_expr = evaluate(prepare_expression(self.lineEdit.text()))
+        if (int(cur_expr) == cur_expr):
+            self.lineEdit.setText(str(int(cur_expr)))
         else:
-            self.lineEdit.setText(str(cur_expr.result))
+            self.lineEdit.setText(str(round(cur_expr, 5)))
+        # self.lineEdit.setCursorPosition(0)
 
 
 app = QtWidgets.QApplication(sys.argv)
