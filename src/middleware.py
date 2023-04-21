@@ -57,20 +57,28 @@ def check_brackets(expr: str):
     
 """@function add_zeros
 Function that adds zeros before unary minus operation"""
-def add_zeros(expr: str):
-    for i, elem in enumerate(expr):
-        if elem == '-':
-            if i == 0:
-                expr = '0' + expr
-            elif not expr[i - 1].isdigit() and expr[i - 1] != ')' and expr[i - 1] != '!':
-                lastpos = len(expr[i+1:])+1
-                for j, elem in enumerate(expr[i+1:]):
-                    if not elem.isdigit() and elem != '.' and elem != '!':
-                        lastpos = j
-                        print(lastpos)
-                        break
-                expr = expr[:i] + '(0' + expr[i:i+lastpos] + ')' + expr[i+lastpos:]
-    return expr
+def add_zeros(expr: str): # good to refactor 4rl, BUT it works
+    offset = 0
+    while True:
+        if offset == len(expr)-1:
+            return expr
+        for i, elem in enumerate(expr[offset:]):
+            if elem == '-':
+                if i == 0:
+                    expr = '0' + expr
+                elif not expr[offset + i - 1].isdigit() and expr[offset + i - 1] != ')' and expr[offset + i - 1] != '!':
+                    lastpos = len(expr[offset+i+1:])+1
+                    for j, elemin in enumerate(expr[i+1:]):
+                        if not elemin.isdigit() and elemin != '.' and elemin != '!':
+                            lastpos = j
+                            break
+                    expr = expr[:i+offset] + '(0' + expr[i+offset:i+lastpos+1+offset] + ')' + expr[i+lastpos+1+offset:]
+                    offset = i + lastpos + 3
+                    break
+                elif i == len(expr[offset:])-1:
+                    return expr
+        else:
+            return expr
 
 """@function prepare_expression
 Function that prepares expression for evaluation using all other middleware functions"""
