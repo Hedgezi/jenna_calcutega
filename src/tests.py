@@ -162,7 +162,7 @@ class AdvancedTestsMathLib(unittest.TestCase):
         equation = "(4!-5!)/(2+3!)"
         assert evaluate(prepare_expression(equation)) == -12
 
-    def test_factorial_and_arithmetic_operations_with_brackets_and_negative_numbers(self):
+    def test_factorial_and_arithmetic_operations_with_brackets_and_negative_numbers(self): # don't work
         equation = "(-4!-5!)/(2+3!)"
         assert evaluate(prepare_expression(equation)) == -18
 
@@ -227,9 +227,9 @@ class BracketsTestMathLib(unittest.TestCase):
         assert evaluate(prepare_expression(equation)) == 10000000000000000000000
 
 if __name__ == '__main__':
-    try:
-        evaluate(prepare_expression("(-4)^(1/2)"))
-    except ValueError:
-        print("You can't take a root from a negative number")
-        pass
+    # try:
+    #     evaluate(prepare_expression("(-4)^(1/2)"))
+    # except ValueError:
+    #     print("You can't take a root from a negative number")
+    #     pass
     unittest.main()

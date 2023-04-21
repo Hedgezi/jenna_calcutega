@@ -62,8 +62,14 @@ def add_zeros(expr: str):
         if elem == '-':
             if i == 0:
                 expr = '0' + expr
-            elif not expr[i - 1].isdigit() and expr[i - 1] != ')':
-                expr = expr[:i] + '0' + expr[i:]
+            elif not expr[i - 1].isdigit() and expr[i - 1] != ')' and expr[i - 1] != '!':
+                lastpos = len(expr[i+1:])+1
+                for j, elem in enumerate(expr[i+1:]):
+                    if not elem.isdigit() and elem != '.' and elem != '!':
+                        lastpos = j
+                        print(lastpos)
+                        break
+                expr = expr[:i] + '(0' + expr[i:i+lastpos] + ')' + expr[i+lastpos:]
     return expr
 
 """@function prepare_expression

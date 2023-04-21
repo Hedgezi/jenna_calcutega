@@ -128,7 +128,10 @@ class EqTree:
                 raise ValueError
             return math.factorial(int(right))
         elif curr_node.data == '%':
-            return left % right
+            if int(right) != right:
+                print(right)
+                raise ValueError
+            return left % int(right)
 
     
 
