@@ -15,7 +15,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         super(MainWindow, self).__init__(*args, **kwargs)
         self.setupUi(self)
         QFontDatabase.addApplicationFont("ui/fonts/OpenSans.ttf")
-        self.lineEdit.setValidator(QRegularExpressionValidator(QRegularExpression("[0-9+-.*/!()^]*")))
+        self.lineEdit.setValidator(QRegularExpressionValidator(QRegularExpression("[0-9+-.*/!()^%]*")))
 
         # Connect buttons to text input
         self.but_0.clicked.connect(lambda: self.add_symbol("0"))
