@@ -28,7 +28,7 @@ class IncorrectBracketsError(Exception):
 
 ##
 # @brief Check if binary operations are between two operands or, in case of unary operations, if they are not at the beginning or end of the expression
-# @param expr todo
+# @param expr The expression, the binarity to be checked in
 def check_binarity(expr: str):
     for i, elem in enumerate(expr):
         
@@ -45,7 +45,7 @@ def check_binarity(expr: str):
 
 ##
 # @brief Check if number of opened brackets is equal to number of closed brackets
-# @param expr todo
+# @param expr The expression to check in
 def check_brackets(expr: str):
     brackets = []
     for elem in expr:
@@ -61,8 +61,8 @@ def check_brackets(expr: str):
     
 ##
 # @brief Add zeros before unary minus operation
-# @param expr todo
-# @return todo
+# @param expr The expression to add zeros in
+# @return The expression with added zeros before unary minus operation
 def add_zeros(expr: str): # good to refactor 4rl, BUT it works
     offset = 0
     while True:
@@ -88,8 +88,8 @@ def add_zeros(expr: str): # good to refactor 4rl, BUT it works
 
 ##
 # @brief Prepare expression for evaluation using all other middleware functions
-# @param expr todo
-# @return todo
+# @param expr The expression to be prepared for evaluation
+# @return The expression ready for evaluation
 def prepare_expression(expr: str):
     temp = expr.replace(' ', '')
     check_brackets(temp)

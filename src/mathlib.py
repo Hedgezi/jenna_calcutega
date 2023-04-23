@@ -31,7 +31,7 @@ associativity = {
 ##
 # @brief Check if element is an operator
 # @param element Element of expression to be checked
-# @return todo
+# @return True if element is an operator, False - otherwise
 def is_operator(element):
     return element in priority.keys()
 
@@ -40,7 +40,7 @@ def is_operator(element):
 # @brief Check if priority of the first is higher/lower/equal than priority of the second operator
 # @param oper1 The first operator 
 # @param oper2 The second operator
-# @return todo
+# @return 1 if priority of oper1 is higher than the priority of oper2, -1 - if lower, 0 - if equal
 def check_priority(oper1, oper2):
     
     if priority[oper1] > priority[oper2]:
@@ -111,8 +111,8 @@ def to_postfix(infix_expr):
 
 ##
 # @brief Function to be called from side modules. Evaluates an input expression. Converting into postfix, building expression tree and evaluating it
-# @param input_expr Given inout expression
-# @return todo
+# @param input_expr Given input expression
+# @return Float value of evaluated expression 
 def evaluate(input_expr):
     logging.debug(f"INPUT: <{input_expr}>")
     postfix_expr = to_postfix(input_expr)

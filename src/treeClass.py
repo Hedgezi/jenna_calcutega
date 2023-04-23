@@ -10,8 +10,8 @@ import math, logging
 class EqNode:
     ##
     # @brief Constructor
-    # @param self todo
-    # @param data todo
+    # @param self The object pointer
+    # @param data Data to be stored in the node
     def __init__(self, data):
         """Constructor"""
         self.left = None
@@ -29,7 +29,7 @@ class EqNode:
 class Stack():
     ##
     # @brief Constructor
-    # @param self todo
+    # @param self The object pointer
     def __init__(self):
         self.arr = []
     
@@ -68,8 +68,8 @@ class Stack():
 class EqTree:
     ##
     # @brief Constructor
-    # @param self todo
-    # @param postfix_expr todo
+    # @param self The object pointer
+    # @param postfix_expr The expression, to build tree from
     def __init__(self, postfix_expr):
         self.expr = postfix_expr
         self.root = None
@@ -169,7 +169,7 @@ class EqTree:
     # @brief Recursive evaluating of tree
     # @param self The object pointer
     # @param curr_node Current node to be evaluated
-    # @return todo
+    # @return Value of the node (if operand is stored in the node), 0 if root is None, result of the operation (if operator is stored in the node)
     def evaluate_tree(self, curr_node):
         if curr_node is None:
             return 0
@@ -204,11 +204,11 @@ class EqTree:
             return left % int(right)
 
     ##
-    # @brief todo
-    # @param self todo
-    # @param node todo
-    # @param tab todo
-    # @return todo
+    # @brief Recursively print the built expression tree
+    # @param self The object pointer
+    # @param node Current node to be printed
+    # @param tab Numers of indents
+    # @return Prints built binary tree
     def print_tree(self, node : EqNode, tab : int):
         if node is None:
             return 
