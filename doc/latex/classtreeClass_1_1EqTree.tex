@@ -1,0 +1,136 @@
+\hypertarget{classtreeClass_1_1EqTree}{}\doxysection{tree\+Class.\+Eq\+Tree Class Reference}
+\label{classtreeClass_1_1EqTree}\index{treeClass.EqTree@{treeClass.EqTree}}
+
+
+Expression tree class for building and evaluating postfix expression.  
+
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classtreeClass_1_1EqTree_a935f58d876e1beec72dd371b2b0a29e5}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, postfix\+\_\+expr)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classtreeClass_1_1EqTree_a205b253dca92a2895e9119105c84e859}{is\+\_\+operator}} (self, element)
+\begin{DoxyCompactList}\small\item\em Check if element is an operand. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classtreeClass_1_1EqTree_a8215ce509a4708cd674dd18a31557cb2}{build\+\_\+tree}} (self, expr)
+\begin{DoxyCompactList}\small\item\em Build expression tree from expression. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classtreeClass_1_1EqTree_afb5782ad3d4aea835b72a5333cea33cb}{evaluate\+\_\+tree}} (self, curr\+\_\+node)
+\begin{DoxyCompactList}\small\item\em Recursive evaluating of tree. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classtreeClass_1_1EqTree_ad906f9d16c6b42896925cc91fea2088a}{print\+\_\+tree}} (self, \mbox{\hyperlink{classtreeClass_1_1EqNode}{Eq\+Node}} node, int tab)
+\begin{DoxyCompactList}\small\item\em todo \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classtreeClass_1_1EqTree_aebb00112580394954693a32478b554c4}\label{classtreeClass_1_1EqTree_aebb00112580394954693a32478b554c4}} 
+{\bfseries expr}
+\item 
+\mbox{\Hypertarget{classtreeClass_1_1EqTree_a28cae2d2a2c5f71294eac76050d48bab}\label{classtreeClass_1_1EqTree_a28cae2d2a2c5f71294eac76050d48bab}} 
+{\bfseries root}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Expression tree class for building and evaluating postfix expression. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classtreeClass_1_1EqTree_a935f58d876e1beec72dd371b2b0a29e5}\label{classtreeClass_1_1EqTree_a935f58d876e1beec72dd371b2b0a29e5}} 
+\index{treeClass.EqTree@{treeClass.EqTree}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!treeClass.EqTree@{treeClass.EqTree}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def tree\+Class.\+Eq\+Tree.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{postfix\+\_\+expr }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em self} & todo \\
+\hline
+{\em postfix\+\_\+expr} & todo \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classtreeClass_1_1EqTree_a8215ce509a4708cd674dd18a31557cb2}\label{classtreeClass_1_1EqTree_a8215ce509a4708cd674dd18a31557cb2}} 
+\index{treeClass.EqTree@{treeClass.EqTree}!build\_tree@{build\_tree}}
+\index{build\_tree@{build\_tree}!treeClass.EqTree@{treeClass.EqTree}}
+\doxysubsubsection{\texorpdfstring{build\_tree()}{build\_tree()}}
+{\footnotesize\ttfamily def tree\+Class.\+Eq\+Tree.\+build\+\_\+tree (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{expr }\end{DoxyParamCaption})}
+
+
+
+Build expression tree from expression. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em self} & The object pointer \\
+\hline
+{\em expr} & Postfix expression \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtreeClass_1_1EqTree_afb5782ad3d4aea835b72a5333cea33cb}\label{classtreeClass_1_1EqTree_afb5782ad3d4aea835b72a5333cea33cb}} 
+\index{treeClass.EqTree@{treeClass.EqTree}!evaluate\_tree@{evaluate\_tree}}
+\index{evaluate\_tree@{evaluate\_tree}!treeClass.EqTree@{treeClass.EqTree}}
+\doxysubsubsection{\texorpdfstring{evaluate\_tree()}{evaluate\_tree()}}
+{\footnotesize\ttfamily def tree\+Class.\+Eq\+Tree.\+evaluate\+\_\+tree (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{curr\+\_\+node }\end{DoxyParamCaption})}
+
+
+
+Recursive evaluating of tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em self} & The object pointer \\
+\hline
+{\em curr\+\_\+node} & Current node to be evaluated \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+todo 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtreeClass_1_1EqTree_a205b253dca92a2895e9119105c84e859}\label{classtreeClass_1_1EqTree_a205b253dca92a2895e9119105c84e859}} 
+\index{treeClass.EqTree@{treeClass.EqTree}!is\_operator@{is\_operator}}
+\index{is\_operator@{is\_operator}!treeClass.EqTree@{treeClass.EqTree}}
+\doxysubsubsection{\texorpdfstring{is\_operator()}{is\_operator()}}
+{\footnotesize\ttfamily def tree\+Class.\+Eq\+Tree.\+is\+\_\+operator (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{element }\end{DoxyParamCaption})}
+
+
+
+Check if element is an operand. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em self} & The object pointer \\
+\hline
+{\em element} & Expression element to be checked \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtreeClass_1_1EqTree_ad906f9d16c6b42896925cc91fea2088a}\label{classtreeClass_1_1EqTree_ad906f9d16c6b42896925cc91fea2088a}} 
+\index{treeClass.EqTree@{treeClass.EqTree}!print\_tree@{print\_tree}}
+\index{print\_tree@{print\_tree}!treeClass.EqTree@{treeClass.EqTree}}
+\doxysubsubsection{\texorpdfstring{print\_tree()}{print\_tree()}}
+{\footnotesize\ttfamily def tree\+Class.\+Eq\+Tree.\+print\+\_\+tree (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{\mbox{\hyperlink{classtreeClass_1_1EqNode}{Eq\+Node}}}]{node,  }\item[{int}]{tab }\end{DoxyParamCaption})}
+
+
+
+todo 
+
+
+\begin{DoxyParams}{Parameters}
+{\em self} & todo \\
+\hline
+{\em node} & todo \\
+\hline
+{\em tab} & todo \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+todo 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{treeClass_8py}{tree\+Class.\+py}}\end{DoxyCompactItemize}

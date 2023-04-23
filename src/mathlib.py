@@ -1,11 +1,12 @@
-"""@package mathlib
-Module with functions to convert and evaluate expression using expression tree
-"""
+##
+# @file mathlib.py
+# @package mathlib
+# @brief Module with functions to convert and evaluate expression using expression tree
 
 import treeClass
 import logging
  
-"""Priorities of operators"""
+# """Priorities of operators"""
 priority = {
     '!' : 3,
     '^' : 2,
@@ -16,7 +17,7 @@ priority = {
     '-' : 0,
 }
 
-"""Associativity of operators"""
+# """Associativity of operators"""
 associativity = {
     '!' : "unar",
     '^' : "RL",
@@ -27,15 +28,19 @@ associativity = {
     '-' : "LR",
 }
 
-"""Checks if element is an operator
-@param element Element of expression to be checked"""
+##
+# @brief Check if element is an operator
+# @param element Element of expression to be checked
+# @return todo
 def is_operator(element):
     return element in priority.keys()
 
-"""Checks if priority of the first is higher/lower/equal than priority of the second operator
-@param oper1 The first operator 
-@param oper2 The second operator
-"""
+
+##
+# @brief Check if priority of the first is higher/lower/equal than priority of the second operator
+# @param oper1 The first operator 
+# @param oper2 The second operator
+# @return todo
 def check_priority(oper1, oper2):
     
     if priority[oper1] > priority[oper2]:
@@ -45,10 +50,9 @@ def check_priority(oper1, oper2):
     else:
         return 0
     
-
-"""Converts infix expression into postfix expression
-@param infix_expr Given infix expression
-@return Postfix expression"""
+##
+# @brief Convert infix expression into postfix expression
+# @param infix_expr Given infix expression
 def to_postfix(infix_expr):
     oper_stack = treeClass.Stack()
     postfix_expr = []
@@ -105,10 +109,10 @@ def to_postfix(infix_expr):
     
     return postfix_expr
 
-
-"""Function to be called from side modules. Evaluates an input expression. Converting into postfix, building expression tree and evaluating it
-@param input_expr Given inout expression
-@return result Evaluation result"""
+##
+# @brief Function to be called from side modules. Evaluates an input expression. Converting into postfix, building expression tree and evaluating it
+# @param input_expr Given inout expression
+# @return todo
 def evaluate(input_expr):
     logging.debug(f"INPUT: <{input_expr}>")
     postfix_expr = to_postfix(input_expr)
