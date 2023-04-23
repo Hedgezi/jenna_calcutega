@@ -1,3 +1,8 @@
+##
+#  @file main.py
+#  @package main
+#  @brief Main file for the project
+
 import sys
 from PyQt6 import QtWidgets
 from PyQt6.QtCore import QRegularExpression
@@ -10,7 +15,16 @@ from ui.calc import Ui_MainWindow
 
 ## Main Window class
 # Importing the UI file from calc.py
+
+##
+# @brief Main Window class, importing the UI file from calc.py
 class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
+    ##
+    # @brief todo
+    # @param self todo
+    # @param *args todo
+    # @param obj todo
+    # @param **kwargs todo
     def __init__(self, *args, obj=None, **kwargs):
         super(MainWindow, self).__init__(*args, **kwargs)
         self.setupUi(self)
@@ -46,26 +60,49 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
         self.but_equals.clicked.connect(self.calculate)
 
-
+    ##
+    # @brief todo
+    # @param self todo
+    # @param symbol todo
     def add_symbol(self, symbol):
         self.lineEdit.setText(self.lineEdit.text() + symbol)
 
+    ##
+    # @brief todo
+    # @param self todo
     def clear(self):
         self.lineEdit.setText("")
     
+    ##
+    # @brief todo
+    # @param self todo
     def backspace(self):
         self.lineEdit.setText(self.lineEdit.text()[:-1])
 
+    ##
+    # @brief todo
+    # @param self todo
     def add_root(self):
         self.lineEdit.setText(self.lineEdit.text() + "^(1/")
 
+    ##
+    # @brief todo
+    # @param self todo
     def calculate(self):
-        cur_expr = evaluate(prepare_expression(self.lineEdit.text()))
-        if (int(cur_expr) == cur_expr):
-            self.lineEdit.setText(str(int(cur_expr)))
+        try:
+            cur_expr = evaluate(prepare_expression(self.lineEdit.text()))
+        except ZeroDivisionError:
+            errordialog = QtWidgets.QErrorMessage(self)
+            errordialog.showMessage("Dividing by zero is forbidden")
+        except Exception as e:
+            errordialog = QtWidgets.QErrorMessage(self)
+            errordialog.showMessage(str(e))
         else:
-            self.lineEdit.setText(str(cur_expr))
-        # self.lineEdit.setCursorPosition(0)
+            if (int(cur_expr) == cur_expr):
+                self.lineEdit.setText(str(int(cur_expr)))
+            else:
+                self.lineEdit.setText(str(cur_expr))
+            self.lineEdit.setCursorPosition(0)
 
 
 app = QtWidgets.QApplication(sys.argv)
