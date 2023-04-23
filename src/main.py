@@ -60,12 +60,20 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.lineEdit.setText(self.lineEdit.text() + "^(1/")
 
     def calculate(self):
-        cur_expr = evaluate(prepare_expression(self.lineEdit.text()))
-        if (int(cur_expr) == cur_expr):
-            self.lineEdit.setText(str(int(cur_expr)))
+        try:
+            cur_expr = evaluate(prepare_expression(self.lineEdit.text()))
+        except ZeroDivisionError:
+            errordialog = QtWidgets.QErrorMessage(self)
+            errordialog.showMessage("Dividing by zero is forbidden")
+        except Exception as e:
+            errordialog = QtWidgets.QErrorMessage(self)
+            errordialog.showMessage(str(e))
         else:
-            self.lineEdit.setText(str(cur_expr))
-        # self.lineEdit.setCursorPosition(0)
+            if (int(cur_expr) == cur_expr):
+                self.lineEdit.setText(str(int(cur_expr)))
+            else:
+                self.lineEdit.setText(str(cur_expr))
+            self.lineEdit.setCursorPosition(0)
 
 
 app = QtWidgets.QApplication(sys.argv)

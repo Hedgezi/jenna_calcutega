@@ -31,14 +31,14 @@ def check_binarity(expr: str):
         
         if elem in truly_binary_operations:
             if i == 0 or i == len(expr) - 1:
-                raise BinaryOperationError()
+                raise BinaryOperationError("Error with usage of binary operator!")
             
             if not (expr[i-1].isdigit() or expr[i-1] in [')', '!']) and (expr[i+1].isdigit() or expr[i+1] == '('):
-                raise BinaryOperationError()
+                raise BinaryOperationError("Error with usage of binary operator!")
             
         if elem in half_binary_operations:
-            if i == len(expr) - 1 and (not (expr[i+1].isdigit() or expr[i+1] == '(')):
-                raise BinaryOperationError()     
+            if i == len(expr)-1 or (not (expr[i+1].isdigit() or expr[i+1] == '(')):
+                raise BinaryOperationError("Error with usage of + or -")     
 
 """@function check_brackets
 Function that checks if number of opened brackets is equal to number of closed brackets"""
@@ -49,11 +49,11 @@ def check_brackets(expr: str):
             brackets.append(elem)
         elif elem == ')':
             if len(brackets) == 0:
-                raise IncorrectBracketsError()
+                raise IncorrectBracketsError("You have unclosed or wrong opened brackets")
             else:
                 brackets.pop()
     if len(brackets) != 0:
-        raise IncorrectBracketsError()
+        raise IncorrectBracketsError("You have unclosed or wrong opened brackets")
     
 """@function add_zeros
 Function that adds zeros before unary minus operation"""
