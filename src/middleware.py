@@ -1,7 +1,7 @@
 """@package middleware
 Module that contains functions to prepare expression for evaluation"""
 
-import mathlib
+import mathlib, logging
 
 truly_binary_operations = '*/%^'
 half_binary_operations = '+-'
@@ -90,5 +90,7 @@ def prepare_expression(expr: str):
     return temp
 
 if __name__ == '__main__':
+    # Debugging
+    # logging.basicConfig(level=logging.DEBUG)
     line = input()
     print(mathlib.evaluate(prepare_expression(line)))

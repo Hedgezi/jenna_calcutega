@@ -79,20 +79,72 @@ class EqTree:
         for i in reversed(expr[:-1]):
             logging.debug(f"Building: <{i}>")
             curr_node = tree_stack.top()
+            logging.debug(f"Curr_node.data = <{curr_node.data}>")
+            # Factorial problem fixes
+            if curr_node.data == '!':
+                temp_node = EqNode(i)
+                curr_node.right = temp_node
+                curr_node.left = EqNode(0)
+                tree_stack.pop()
+                if self.is_operator(i):
+                    tree_stack.push(temp_node)
+                
+                logging.debug("----------Factorial logging")
+                logging.debug(f"---------After building for <{i}> at current node <{curr_node.data}>")
+                logging.debug(f"---------left = <{curr_node.left.data}> || right = <{curr_node.right.data}>")
+                logging.debug("----------END ofFactorial logging")
+
+                #DEBUG ONLY
+                logging.debug(f"Tree after building for <{i}> at current node <{curr_node.data}>")
+                # self.print_tree(self.root, 0)
+                #END OF DEBUG ONLY
+                continue
+                
+            # else:
             if curr_node.right is None:
                 temp_node = EqNode(i)
                 curr_node.right = temp_node
                 if self.is_operator(i):
                     tree_stack.push(temp_node)
             else: 
-                while curr_node.data == '!':
-                    curr_node = tree_stack.pop()
+                # while curr_node.data == '!':
+                #     curr_node = tree_stack.pop()
                 temp_node = EqNode(i)
                 curr_node.left = temp_node
-        
                 tree_stack.pop()
                 if self.is_operator(i):
                     tree_stack.push(temp_node)
+            
+            logging.debug(f"After building for <{i}> at current node <{curr_node.data}>")
+            if curr_node.left is None and curr_node.right is None:
+                logging.debug(f"left = <None> || right = <None>")
+            elif curr_node.left is None:
+                logging.debug(f"left = <None> || right = <{curr_node.right.data}>")    
+            elif curr_node.right is None:
+                logging.debug(f"left = <{curr_node.left.data}> || right = <None>")
+            else: 
+                logging.debug(f"left = <{curr_node.left.data}> || right = <{curr_node.right.data}>")
+
+            #DEBUG ONLY
+            logging.debug(f"Tree after building for <{i}> at current node <{curr_node.data}>")
+            # self.print_tree(self.root, 0)
+            #END OF DEBUG ONLY
+            #******************Before fixing:***********************
+
+            # if curr_node.right is None:
+            #     temp_node = EqNode(i)
+            #     curr_node.right = temp_node
+            #     if self.is_operator(i):
+            #         tree_stack.push(temp_node)
+            # else: 
+            #     while curr_node.data == '!':
+            #         curr_node = tree_stack.pop()
+            #     temp_node = EqNode(i)
+            #     curr_node.left = temp_node
+            
+            #     tree_stack.pop()
+            #     if self.is_operator(i):
+            #         tree_stack.push(temp_node)
     
 
 
@@ -105,6 +157,7 @@ class EqTree:
         if curr_node is None:
             return 0
 
+        logging.debug(f"Evaluating: <{curr_node.data}>, left = <{curr_node.left}>, right = <{curr_node.right}>")
         if curr_node.left is None and curr_node.right is None:
             return float(curr_node.data)
 
@@ -133,7 +186,21 @@ class EqTree:
                 raise ValueError
             return left % int(right)
 
-    
+    def print_tree(self, node : EqNode, tab : int):
+        if node is None:
+            return 
+        
+        tab += 3
+        self.print_tree(node.right, tab)
+
+        
+        for i in range(0, tab):
+            print(end=" ")
+        print(node.data)
+
+
+        self.print_tree(node.left, tab)
+
 
 
 # if __name__ == "__main__":
