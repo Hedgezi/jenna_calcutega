@@ -20,11 +20,8 @@ from ui.calc import Ui_MainWindow
 # @brief Main Window class, importing the UI file from calc.py
 class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     ##
-    # @brief todo
-    # @param self todo
-    # @param *args todo
-    # @param obj todo
-    # @param **kwargs todo
+    # @brief Constructor for the Main Window
+    # @param self The object pointer
     def __init__(self, *args, obj=None, **kwargs):
         super(MainWindow, self).__init__(*args, **kwargs)
         self.setupUi(self)
@@ -61,33 +58,33 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.but_equals.clicked.connect(self.calculate)
 
     ##
-    # @brief todo
-    # @param self todo
-    # @param symbol todo
+    # @brief Function to add a symbol to the text input, when a button is pressed
+    # @param self The object pointer
+    # @param symbol Which symbol to add
     def add_symbol(self, symbol):
         self.lineEdit.setText(self.lineEdit.text() + symbol)
 
     ##
-    # @brief todo
-    # @param self todo
+    # @brief Function to clear the text input
+    # @param self The object pointer
     def clear(self):
         self.lineEdit.setText("")
     
     ##
-    # @brief todo
-    # @param self todo
+    # @brief Function to delete the last symbol from the text input
+    # @param self The object pointer
     def backspace(self):
         self.lineEdit.setText(self.lineEdit.text()[:-1])
 
     ##
-    # @brief todo
-    # @param self todo
+    # @brief Function to add inverted power to the text input
+    # @param self The object pointer
     def add_root(self):
         self.lineEdit.setText(self.lineEdit.text() + "^(1/")
 
     ##
     # @brief todo
-    # @param self todo
+    # @param self The object pointer
     def calculate(self):
         try:
             cur_expr = evaluate(prepare_expression(self.lineEdit.text()))
