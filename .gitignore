@@ -161,4 +161,8 @@ cython_debug/
 
 # Krita temp files
 *.jpg~
+
 src/test.py
+
+# Generated docs
+doc/*
