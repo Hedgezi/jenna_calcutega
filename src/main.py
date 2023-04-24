@@ -95,11 +95,15 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             errordialog = QtWidgets.QErrorMessage(self)
             errordialog.showMessage(str(e))
         else:
-            if (int(cur_expr) == cur_expr):
-                self.lineEdit.setText(str(int(cur_expr)))
+            if (type(cur_expr) == complex):
+                errordialog = QtWidgets.QErrorMessage(self)
+                errordialog.showMessage("The real solution doesn't exist")
             else:
-                self.lineEdit.setText(str(cur_expr))
-            self.lineEdit.setCursorPosition(0)
+                if (int(cur_expr) == cur_expr):
+                    self.lineEdit.setText(str(int(cur_expr)))
+                else:
+                    self.lineEdit.setText(str(cur_expr))
+                self.lineEdit.setCursorPosition(0)
 
 
 app = QtWidgets.QApplication(sys.argv)
