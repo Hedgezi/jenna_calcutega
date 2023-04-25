@@ -26,7 +26,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__(self, *args, obj=None, **kwargs):
         super(MainWindow, self).__init__(*args, **kwargs)
         self.setupUi(self)
-        QFontDatabase.addApplicationFont("ui/fonts/OpenSans.ttf")
+        QFontDatabase.addApplicationFont(":/fonts/fonts/OpenSans.ttf")
         self.lineEdit.setValidator(QRegularExpressionValidator(QRegularExpression("[0-9+-.*/!()^%]*")))
 
         # Connect buttons to text input
