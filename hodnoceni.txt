@@ -1,0 +1,4 @@
+xvoron03 100 (Vedoucí tymu, code review, GUI, prepojeni, mockups)
+xsolom02 100 (Testy, profiling)
+xklyme00 100 (Dokumentace, makefile, instalátory) 
+xmomot00 100 (Mat. knihovna, návrh)
