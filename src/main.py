@@ -4,7 +4,7 @@
 #  @brief Main file for the project
 
 import sys
-import PyQt6
+import PyQt6 # for correct work of pyinstaller
 from PyQt6 import QtWidgets
 from PyQt6.QtCore import QRegularExpression
 from PyQt6.QtGui import QFontDatabase, QRegularExpressionValidator
@@ -91,9 +91,11 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             cur_expr = evaluate(prepare_expression(self.lineEdit.text()))
         except ZeroDivisionError:
             errordialog = QtWidgets.QErrorMessage(self)
+            errordialog.setWindowModality(PyQt6.QtCore.Qt.WindowModality.WindowModal)
             errordialog.showMessage("Dividing by zero is forbidden")
         except Exception as e:
             errordialog = QtWidgets.QErrorMessage(self)
+            errordialog.setWindowModality(PyQt6.QtCore.Qt.WindowModality.WindowModal)
             errordialog.showMessage(str(e))
         else:
             if (type(cur_expr) == complex):
