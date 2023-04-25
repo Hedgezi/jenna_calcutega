@@ -1,7 +1,15 @@
+##
+# @file tests.py
+# @package tests
+# @brief Tests for mathlib
+
+
 import unittest
 from middleware import prepare_expression, IncorrectBracketsError, BinaryOperationError
 from mathlib import evaluate
 
+##
+# @brief Some simple tests containing only addition and subtraction
 class SimpleMathOperationsTest(unittest.TestCase):
     
     def testA(self):
@@ -48,6 +56,8 @@ class SimpleMathOperationsTest(unittest.TestCase):
         equation = "-10-20-30-40-50"
         assert evaluate(prepare_expression(equation)) == -150
 
+##
+# @brief Some tests containing multiplication and division
 class MulDivTests(unittest.TestCase):
 
     def test_mul(self):
@@ -78,7 +88,9 @@ class MulDivTests(unittest.TestCase):
         equation = "2*3/6"
         assert evaluate(prepare_expression(equation)) == 1
 
-class OrderPowMathLib(unittest.TestCase):
+##
+# @brief Tests containing power operation and factorial and order of operations 
+class OrderPowFacMathLib(unittest.TestCase):
 
     def test_order_of_pow(self):
         equation = "3^2^3"
@@ -144,7 +156,8 @@ class OrderPowMathLib(unittest.TestCase):
         equation = "5%(-2)"
         assert evaluate(prepare_expression(equation)) == -1
 
-
+##
+# @brief Advanced tests containing everything
 class AdvancedTestsMathLib(unittest.TestCase):
 
     def test_factorial_and_arithmetic_operations(self):
@@ -178,6 +191,8 @@ class AdvancedTestsMathLib(unittest.TestCase):
     def test_factorial_float_brackets(self):
         self.assertRaises(ValueError, lambda: evaluate(prepare_expression("(3+3.5)!")))
 
+##
+# @brief Tests containing brackets
 class BracketsTestMathLib(unittest.TestCase):
     def test_brackets_1(self):
         equation = "(((3+7)/(3-1))*(6!-5!))-5^2"
@@ -212,9 +227,4 @@ class BracketsTestMathLib(unittest.TestCase):
         assert evaluate(prepare_expression(equation)) == 10000000000000000000000
 
 if __name__ == '__main__':
-    # try:
-    #     evaluate(prepare_expression("(-4)^(1/2)"))
-    # except ValueError:
-    #     print("You can't take a root from a negative number")
-    #     pass
     unittest.main()
