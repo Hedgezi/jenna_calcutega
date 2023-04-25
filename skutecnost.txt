@@ -1,1 +1,1 @@
-tento soubor bude obsahovat rozdil mezi planem projektu a skutecnosti
+Začali jsme podle planu pracovat každý nad svými věci, ale protože jsme si rozhodli udělat kalkulačku s podporou závorek, vyšlo nám to tak, že matematická knihovna byla udělaná o týden později něž to jsme naplánovali, proto všechno jiné co potřebovali udělat po mat. knihovně taký nám vyšlo o týden později, ale nějak to zvládli a jsme hrdí, že máme podporu závorek!

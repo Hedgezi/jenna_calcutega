@@ -1,0 +1,1 @@
+Máme dost hodně len() calls, takže mohli bysme zachovávat výsledky len() v proměnných. Taký dost času ztratíme na importy, tak můžeme snížit jejich počet a odebrat které nepotřebujeme, alebo vyměnit na from.
