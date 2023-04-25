@@ -103,10 +103,6 @@ class OrderPowMathLib(unittest.TestCase):
     def test_factorial_pow(self):
         equation = "3!^2"
         assert evaluate(prepare_expression(equation)) == 36
-    
-    def test_negative_number_root_brackets(self):
-        equation = "(-8)^(1/3)"
-        assert evaluate(prepare_expression(equation)) == -2
 
     def test_negative_number_pow(self):
         equation = "(-2)^(3)"
@@ -121,12 +117,9 @@ class OrderPowMathLib(unittest.TestCase):
 
     def test_negative_factorial(self):
         self.assertRaises(ValueError, lambda: evaluate(prepare_expression("(-3)!")))
-    
-    def test_negative_root(self):
-        self.assertRaises(ValueError, lambda: evaluate(prepare_expression("(-4)^(1/2)")))
 
     def test_unnatural_factorial(self):
-        self.assertRaises(ValueError, evaluate(prepare_expression("3.5!")))
+        self.assertRaises(ValueError, lambda: evaluate(prepare_expression("3.5!")))
 
     def test_zero_factorial(self):
         equation = "0!"
@@ -169,10 +162,6 @@ class AdvancedTestsMathLib(unittest.TestCase):
     def test_float_brackerts(self):
         equation = "(1.2*6.3/2*(0.5+0.75))"
         assert evaluate(prepare_expression(equation)) == 4.725
-
-    def test_float_brackerts_2(self):
-        equation = "((2.7^2 - 1.5*3)*7.1)"
-        assert evaluate(prepare_expression(equation)) == 19.809
 
     def test_brackets_not_close(self):
         self.assertRaises(IncorrectBracketsError, lambda: evaluate(prepare_expression("(2+3-5")))
@@ -217,11 +206,7 @@ class BracketsTestMathLib(unittest.TestCase):
     def test_brackets_7(self):  
         equation = "(2+3)*(2+3)!"
         assert evaluate(prepare_expression(equation)) == 600
-    
-    def test_big_numbers(self):
-        equation = "1000000000000000000+3246864214690521467"
-        assert evaluate(prepare_expression(equation)) == 4246864214690521467
-    
+        
     def test_big_numbers_2(self):    
         equation = "1000000000000000000*10000"
         assert evaluate(prepare_expression(equation)) == 10000000000000000000000

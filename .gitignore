@@ -161,4 +161,12 @@ cython_debug/
 
 # Krita temp files
 *.jpg~
+
+# Temp files
 src/test.py
+
+# Generated docs
+doc/*
+
+# VS Code settings
+.vscode/*

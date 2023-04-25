@@ -7,6 +7,9 @@ on:
       - mathlib
       - tests
       - contint
+      - uiandmathlib
+      - profiling
+      - final
 
 jobs:
   build:

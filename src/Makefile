@@ -1,4 +1,8 @@
 all:
+	pip install -r requirements.txt
+
+# pack:
+# 	zip -r
 
 clean:
 	rm -rf ../src/__pycache__
@@ -11,3 +15,6 @@ doc:
 
 run: main.py
 	python3 main.py
+
+profile: profiling.py
+	python3 profiling.py
