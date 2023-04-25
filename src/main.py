@@ -4,6 +4,7 @@
 #  @brief Main file for the project
 
 import sys
+import PyQt6
 from PyQt6 import QtWidgets
 from PyQt6.QtCore import QRegularExpression
 from PyQt6.QtGui import QFontDatabase, QRegularExpressionValidator
